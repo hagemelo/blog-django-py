@@ -1,9 +1,9 @@
 kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
-  selfLink: /apis/build.openshift.io/v1/namespaces/group001_fiap/buildconfigs/blog-django-py
+  selfLink: /apis/build.openshift.io/v1/namespaces/group001-fiap/buildconfigs/blog-django-py
   name: blog-django-py
-  namespace: group001_fiap
+  namespace: group001-fiap
   labels:
     app: blog-django-py
     app.kubernetes.io/component: blog-django-py
