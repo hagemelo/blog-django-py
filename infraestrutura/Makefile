@@ -7,7 +7,6 @@ criarprojeto:
 criarambiente:
 	oc apply -k kustomization.yml
 
-build:
-	criarprojeto
+build: criarprojeto
 	criarambiente
 	
