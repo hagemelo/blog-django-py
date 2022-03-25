@@ -10,5 +10,5 @@ criardatabase:
 criarambiente:
 	oc apply -k .
 
-build: criarprojeto criarambiente criardatabase
+build: criarprojeto criardatabase criarambiente 
 	

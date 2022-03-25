@@ -4,4 +4,5 @@ namespace: group001_fiap
 resources:
   - blog-django-py-github-webhook-secret.yml
   - blog-django-py-generic-webhook-secret.yml
+  - image-stream.yml
   - build-config.yml
