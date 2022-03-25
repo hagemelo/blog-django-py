@@ -4,7 +4,7 @@ metadata:
   name: plugin-k8s-role-binding
 subjects:
 - kind: ServiceAccount
-  name: wauser
+  name: dmdgod
 roleRef:
   kind: Role
   name: k8s-role
