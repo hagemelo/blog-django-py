@@ -1,5 +1,5 @@
-kind: BuildConfig
 apiVersion: build.openshift.io/v1
+kind: BuildConfig
 metadata:
   selfLink: /apis/build.openshift.io/v1/namespaces/group001-fiap/buildconfigs/blog-django-py
   name: blog-django-py
