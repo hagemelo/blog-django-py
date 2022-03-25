@@ -8,7 +8,7 @@ criardatabase:
 	oc new-app postgresql-persistent --name sample-database --param DATABASE_SERVICE_NAME=sample-database --param POSTGRESQL_USER=sampledb --param POSTGRESQL_PASSWORD=sampledb --param POSTGRESQL_DATABASE=sampledb
 
 criarambiente:
-	oc apply -k kustomization.yml
+	oc apply -k .
 
 build: criarprojeto criarambiente criardatabase
 	
