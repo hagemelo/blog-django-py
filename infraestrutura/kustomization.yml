@@ -2,9 +2,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: group001_fiap
 resources:
-  - role-binding.yml
-  - role.yml
-  - blog-django-py-github-webhook-secret.yml
-  - blog-django-py-generic-webhook-secret.yml
-  - image-stream.yml
-  - build-config.yml
+  - service-account.yml
