@@ -1,4 +1,4 @@
-FROM centos/python-35-centos7:latest
+FROM centos/python-35-centos7:latest as assemble
 
 USER root
 
@@ -20,4 +20,18 @@ ENV S2I_SCRIPTS_PATH=/usr/libexec/s2i \
 
 RUN /tmp/scripts/assemble
 
-CMD [ "/tmp/scripts/run" ]
+FROM centos/python-35-centos7:latest as runner
+
+
+COPY --from=assemble /tmp/scripts /tmp/scripts
+
+USER 1001
+
+ENV S2I_SCRIPTS_PATH=/usr/libexec/s2i \
+    S2I_BASH_ENV=/opt/app-root/etc/scl_enable \
+    DISABLE_COLLECTSTATIC=1 \
+    DISABLE_MIGRATE=1
+
+WORKDIR /tmp/scripts
+
+CMD [ "run" ]
