@@ -28,11 +28,14 @@ spec:
         kind: ImageStreamTag
         namespace: openshift
         name: 'python:3.8-ubi7'
+    env:
+        - name: DATABASE_URL
+          value: 'postgresql://sampledb:sampledb@sample-database:5432/sampledb'
   postCommit: {}
   source:
     type: Git
     git:
-      uri: 'https://github.com/openshift-instruqt/blog-django-py'
+      uri: 'https://github.com/hagemelo/blog-django-py.git'
     contextDir: /
   triggers:
     - type: Generic

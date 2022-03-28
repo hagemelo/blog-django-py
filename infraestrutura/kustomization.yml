@@ -2,4 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: group001_fiap
 resources:
+  - image-stream.yml
+  - blog-django-py-generic-webhook-secret.yml
+  - blog-django-py-github-webhook-secret.yml
+  - build-config.yml
   - build-config.yml

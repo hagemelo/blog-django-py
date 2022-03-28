@@ -1,0 +1,68 @@
+apiVersion: build.openshift.io/v1
+kind: Build
+
+metadata:
+  annotations:
+    openshift.io/build-config.name: blog-django-py-git
+    openshift.io/build.number: '1'
+    openshift.io/build.pod-name: blog-django-py-git-1-build
+  selfLink: >-
+    /apis/build.openshift.io/v1/namespaces/group001-fiap/builds/blog-django-py-git-1
+  resourceVersion: '41000059'
+  name: blog-django-py-git-1
+  namespace: group001-fiap
+  ownerReferences:
+    - apiVersion: build.openshift.io/v1
+      kind: BuildConfig
+      name: blog-django-py-git
+  labels:
+    app: blog-django-py-git
+    app.kubernetes.io/part-of: blog-django-py-git-app
+    app.kubernetes.io/instance: blog-django-py-git
+    openshift.io/build-config.name: blog-django-py-git
+    app.kubernetes.io/component: blog-django-py-git
+    openshift.io/build.start-policy: Serial
+    buildconfig: blog-django-py-git
+    app.openshift.io/runtime: python
+    app.kubernetes.io/name: python
+    app.openshift.io/runtime-version: 3.8-ubi7
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'blog-django-py-git:latest'
+    pushSecret:
+      name: builder-dockercfg-6jq7q
+  resources: {}
+  triggeredBy:
+    - message: Image change
+      imageChangeBuild:
+        imageID: >-
+          image-registry.openshift-image-registry.svc:5000/openshift/python@sha256:c5d24b467168e31a134bc2ff5cd6927e89dd12859bef22bebbfddc27285401dc
+        fromRef:
+          kind: ImageStreamTag
+          namespace: openshift
+          name: 'python:3.8-ubi7'
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: DockerImage
+        name: >-
+          image-registry.openshift-image-registry.svc:5000/openshift/python@sha256:c5d24b467168e31a134bc2ff5cd6927e89dd12859bef22bebbfddc27285401dc
+      pullSecret:
+        name: builder-dockercfg-6jq7q
+      env:
+        - name: DATABASE_URL
+          value: 'postgresql://sampledb:sampledb@sample-database:5432/sampledb'
+  postCommit: {}
+  serviceAccount: builder
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/hagemelo/blog-django-py.git'
+    contextDir: /
+  
+
+

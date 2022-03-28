@@ -3,7 +3,7 @@ kind: ImageStream
 metadata:
   name: blog-django-py
   namespace: group001-fiap
-  selfLink: /apis/image.openshift.io/v1/namespaces/fiap-test/imagestreams/blog-django-py
+  selfLink: /apis/image.openshift.io/v1/namespaces/group001-fiap/imagestreams/blog-django-py
 labels:
     app: blog-django-py
     app.kubernetes.io/component: blog-django-py
