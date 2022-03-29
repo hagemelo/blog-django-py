@@ -16,5 +16,5 @@ criarambiente:
 criarhpa:
 	oc autoscale deployment/blog-django-py-git --min 1 --max 10 --cpu-percent=80
 
-build: criarprojeto criardatabase criarenv criarambiente criarhpa
+build: criarprojeto criardatabase criarambiente criarenv criarhpa
 	
