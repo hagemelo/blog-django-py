@@ -6,4 +6,7 @@ resources:
   - blog-django-py-generic-webhook-secret.yml
   - blog-django-py-github-webhook-secret.yml
   - build-config.yml
-  - build-config.yml
+  - build.yml
+  - deployment.yml
+  - service.yml
+  - route.yml
