@@ -11,7 +11,7 @@ Repositório para entrega Solution Sprint da Fase 4 com foco total em microsserv
 
   Para a Etapa 2 --> Foi construindo infraestrutura/, onde o script de construção do ambiente consta no aquivo MakeFile
 
-  Para a Etapa 3 -->  e HPA cosntra no infraestrutura/MakeFile na instrução criarhpa
+  Para a Etapa 3 --> O HPA consta no infraestrutura/MakeFile na instrução criarhpa
 
   Para a Etapa 4 --> Foi desenvolvido o repositório https://github.com/hagemelo/blog-django-py.git
 
