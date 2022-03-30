@@ -7,7 +7,7 @@ Repositório para entrega Solution Sprint da Fase 4 com foco total em microsserv
 
 # ENTREGAS
 
-  Para a Etapa 1 --> Foi construindo entrega01/, aqui contido, atendendo os critérios solicitado
+  Para a Etapa 1 --> Foi construindo entrega01/, aqui contido, atendendo os critérios solicitados
 
   Para a Etapa 2 --> Foi construindo infraestrutura/, onde o script de construção do ambiente consta no aquivo MakeFile
 
