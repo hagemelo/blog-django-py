@@ -32,28 +32,6 @@ spec:
           resources: {}
           imagePullPolicy: Always
           env:
-            - name: BLOG_SITE_NAME
-              value: Grupo 9's Blog
-            - name: BLOG_BANNER_COLOR
-              value: black
-            - name: DATABASE_SERVICE_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: python-blog
-                  key: db-service-name
-            - name: POSTGRESQL_USER
-              valueFrom:
-                secretKeyRef:
-                  name: python-blog
-                  key: db-user
-            - name: POSTGRESQL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: python-blog
-                  key: db-pass
-            - name: POSTGRESQL_DATABASE
-              valueFrom:
-                secretKeyRef:
-                  name: python-blog
-                  key: db-name     
+            - name: DATABASE_URL
+              value: 'postgresql://sampledb:sampledb@sample-database:5432/sampledb'     
       restartPolicy: Always

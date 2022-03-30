@@ -14,10 +14,11 @@ metadata:
     app.openshift.io/runtime: python
     app.openshift.io/runtime-version: 3.8-ubi7
 spec:
+  host: blog-django-py-git-group001-fiap.apps.na46.prod.nextcle.com
   to:
     kind: Service
-    name: blog-ingress
+    name: blog-django-py-git
     weight: 100
   port:
-    targetPort: 8080
+    targetPort: 8080-tcp
   wildcardPolicy: None
