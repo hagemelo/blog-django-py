@@ -10,9 +10,9 @@ Grupo 1
 
 # ENTREGA
 
-  Para a Etapa 1 --> Foi reajustado o Dockerfile, aqui contido, atendendo os critérios solicitado.
+  Para a Etapa 1 --> Foi construindo entrega01/, aqui contido, atendendo os critérios solicitado.
 
-  Para a Etapa 2 --> Foi construindo /infraestrutura, onde o script de construção do ambiente consta no aquivo MakeFile
+  Para a Etapa 2 --> Foi construindo infraestrutura/, onde o script de construção do ambiente consta no aquivo MakeFile
 
   Para a Etapa 3 -->  e HPA cosntra no infraestrutura/MakeFile na instrução criarhpa
 
