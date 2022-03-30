@@ -18,13 +18,17 @@ Repositório para entrega Solution Sprint da Fase 4 com foco total em microsserv
 # CONSTRUÇÃO
 
 ## Pré requisitos:
-  1 - Install Make:  yum install make
 
-  2 - Install git :  yum install git
+Instalar via terminal:
+
+```
+  yum install make
+  yum install git
+```
 
 ## Instruções:
 
-Entrega 01 - Dockerfile
+Entrega 1 - Dockerfile
 ```  
 git clone https://github.com/hagemelo/blog-django-py.git
 cd entrega01/ 
@@ -32,14 +36,12 @@ podman build .
 podman run -dt -p 8080:8080/tcp --name my-running-app localhost/<user>/node-web-app
 ```
 
-Entregas 2-4 - OpenShift
-  
+Entregas 2 e 3 - OpenShift
+ 
+ ```
   git clone https://github.com/hagemelo/blog-django-py.git
-
   cd blog-django-py/infraestrutura
-
   oc login --token=<token> --server=https://api.na46.prod.nextcle.com:6443
-
   make build
 ```
 
