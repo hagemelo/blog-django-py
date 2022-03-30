@@ -10,7 +10,12 @@ Grupo 1
 
 # ENTREGA
 
-  Para a Etapa 1 --> Foi construindo entrega01/, aqui contido, atendendo os critérios solicitado.
+  Para a Etapa 1 --> Foi construindo entrega01/, aqui contido, atendendo os critérios solicitado
+'''
+Dockerfile
+podman build . -t <user>//node-web-app
+'''
+podman run -dt -p 8080:8080/tcp --name my-running-app localhost/<user>/node-web-app
 
   Para a Etapa 2 --> Foi construindo infraestrutura/, onde o script de construção do ambiente consta no aquivo MakeFile
 
