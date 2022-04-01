@@ -1,4 +1,4 @@
-PROJECT=group001-fiap
+PROJECT=group001fiap
 
 criarprojeto:
 	oc new-project $(PROJECT)

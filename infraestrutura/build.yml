@@ -10,7 +10,7 @@ metadata:
     /apis/build.openshift.io/v1/namespaces/group001-fiap/builds/blog-django-py-git-1
   resourceVersion: '41000059'
   name: blog-django-py-git-1
-  namespace: group001-fiap
+  namespace: group001fiap
   ownerReferences:
     - apiVersion: build.openshift.io/v1
       kind: BuildConfig

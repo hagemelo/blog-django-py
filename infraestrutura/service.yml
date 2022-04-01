@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: blog-ingress
-  namespace: group001-fiap
+  namespace: group001fiap
   labels:
     app: blog-django-py-git
     app.kubernetes.io/component: blog-django-py-git
