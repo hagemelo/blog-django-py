@@ -10,5 +10,6 @@ resources:
   - deployment.yml
   - service.yml
   - route.yml
+  - Ingress.yml
 
   
