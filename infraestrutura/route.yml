@@ -1,9 +1,48 @@
-apiVersion: route.openshift.io/v1
 kind: Route
+apiVersion: route.openshift.io/v1
 metadata:
   annotations:
     openshift.io/host.generated: 'true'
-  name: blog-ingress
+  selfLink: >-
+    /apis/route.openshift.io/v1/namespaces/group001fiap/routes/blog-django-py-git
+  resourceVersion: '49534227'
+  name: blog-django-py-git
+  uid: 6a902659-4c21-4847-9e55-5e40aefe69c6
+  creationTimestamp: '2022-04-02T15:48:33Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2022-04-02T15:48:33Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-version': {}
+        'f:spec':
+          'f:port':
+            .: {}
+            'f:targetPort': {}
+          'f:to':
+            'f:kind': {}
+            'f:name': {}
+            'f:weight': {}
+          'f:wildcardPolicy': {}
+    - manager: openshift-router
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2022-04-02T15:48:33Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:ingress': {}
   namespace: group001fiap
   labels:
     app: blog-django-py-git
@@ -14,7 +53,7 @@ metadata:
     app.openshift.io/runtime: python
     app.openshift.io/runtime-version: 3.8-ubi7
 spec:
-  host: blog-django-py-git-group001-fiap.apps.na46.prod.nextcle.com
+  host: blog-django-py-git-group001fiap.apps.na46.prod.nextcle.com
   to:
     kind: Service
     name: blog-django-py-git
@@ -22,3 +61,13 @@ spec:
   port:
     targetPort: 8080-tcp
   wildcardPolicy: None
+status:
+  ingress:
+    - host: blog-django-py-git-group001fiap.apps.na46.prod.nextcle.com
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2022-04-02T15:48:33Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: apps.na46.prod.nextcle.com

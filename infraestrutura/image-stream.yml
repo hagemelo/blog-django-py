@@ -1,18 +1,62 @@
-apiVersion: image.openshift.io/v1
 kind: ImageStream
+apiVersion: image.openshift.io/v1
 metadata:
-  name: blog-django-py
+  annotations:
+    app.openshift.io/vcs-ref: ''
+    app.openshift.io/vcs-uri: 'https://github.com/hagemelo/blog-django-py.git'
+    openshift.io/generated-by: OpenShiftWebConsole
+  selfLink: >-
+    /apis/image.openshift.io/v1/namespaces/group001fiap/imagestreams/blog-django-py-git
+  resourceVersion: '49534934'
+  name: blog-django-py-git
+  uid: e07d26c1-c153-4773-ae1e-71ae029cd1e0
+  creationTimestamp: '2022-04-02T15:48:32Z'
+  generation: 1
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: image.openshift.io/v1
+      time: '2022-04-02T15:48:32Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:app.openshift.io/vcs-ref': {}
+            'f:app.openshift.io/vcs-uri': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-version': {}
   namespace: group001fiap
-  selfLink: /apis/image.openshift.io/v1/namespaces/group001-fiap/imagestreams/blog-django-py
-labels:
-    app: blog-django-py
-    app.kubernetes.io/component: blog-django-py
-    app.kubernetes.io/instance: blog-django-py
+  labels:
+    app: blog-django-py-git
+    app.kubernetes.io/component: blog-django-py-git
+    app.kubernetes.io/instance: blog-django-py-git
     app.kubernetes.io/name: python
-    app.kubernetes.io/part-of: blog-django-py-app
+    app.kubernetes.io/part-of: blog-django-py-git-app
     app.openshift.io/runtime: python
     app.openshift.io/runtime-version: 3.8-ubi7
 spec:
   lookupPolicy:
     local: false
-
+status:
+  dockerImageRepository: >-
+    image-registry.openshift-image-registry.svc:5000/group001fiap/blog-django-py-git
+  publicDockerImageRepository: >-
+    default-route-openshift-image-registry.apps.na46.prod.nextcle.com/group001fiap/blog-django-py-git
+  tags:
+    - tag: latest
+      items:
+        - created: '2022-04-02T15:49:51Z'
+          dockerImageReference: >-
+            image-registry.openshift-image-registry.svc:5000/group001fiap/blog-django-py-git@sha256:32d103a60d388d0424893638d44f2c3a15a3dbfdc8497db29a1fada398f052c5
+          image: >-
+            sha256:32d103a60d388d0424893638d44f2c3a15a3dbfdc8497db29a1fada398f052c5
+          generation: 1

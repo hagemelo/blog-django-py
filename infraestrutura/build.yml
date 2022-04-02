@@ -1,20 +1,23 @@
-apiVersion: build.openshift.io/v1
 kind: Build
-
+apiVersion: build.openshift.io/v1
 metadata:
   annotations:
     openshift.io/build-config.name: blog-django-py-git
     openshift.io/build.number: '1'
     openshift.io/build.pod-name: blog-django-py-git-1-build
   selfLink: >-
-    /apis/build.openshift.io/v1/namespaces/group001-fiap/builds/blog-django-py-git-1
-  resourceVersion: '41000059'
+    /apis/build.openshift.io/v1/namespaces/group001fiap/builds/blog-django-py-git-1
+  resourceVersion: '49534955'
   name: blog-django-py-git-1
+  uid: 2501418f-cbc0-459e-99c7-ab51f94dc216
+  creationTimestamp: '2022-04-02T15:48:32Z'
   namespace: group001fiap
   ownerReferences:
     - apiVersion: build.openshift.io/v1
       kind: BuildConfig
       name: blog-django-py-git
+      uid: 053558da-ce24-468e-8f53-acd5522c5c6d
+      controller: true
   labels:
     app: blog-django-py-git
     app.kubernetes.io/part-of: blog-django-py-git-app
@@ -33,7 +36,7 @@ spec:
       kind: ImageStreamTag
       name: 'blog-django-py-git:latest'
     pushSecret:
-      name: builder-dockercfg-6jq7q
+      name: builder-dockercfg-rmgf7
   resources: {}
   triggeredBy:
     - message: Image change
@@ -52,7 +55,7 @@ spec:
         name: >-
           image-registry.openshift-image-registry.svc:5000/openshift/python@sha256:c5d24b467168e31a134bc2ff5cd6927e89dd12859bef22bebbfddc27285401dc
       pullSecret:
-        name: builder-dockercfg-6jq7q
+        name: builder-dockercfg-rmgf7
       env:
         - name: DATABASE_URL
           value: 'postgresql://sampledb:sampledb@sample-database:5432/sampledb'
@@ -63,6 +66,74 @@ spec:
     git:
       uri: 'https://github.com/hagemelo/blog-django-py.git'
     contextDir: /
-  
-
-
+  revision:
+    type: Git
+    git:
+      commit: 3fd12116eeab63a9233c2a5b01aa64c27d447a6d
+      author:
+        name: Alexsander Hage de Melo
+        email: hagemelo@gmail.com
+      committer:
+        name: Alexsander Hage de Melo
+        email: hagemelo@gmail.com
+      message: atualizacao
+status:
+  output:
+    to:
+      imageDigest: 'sha256:32d103a60d388d0424893638d44f2c3a15a3dbfdc8497db29a1fada398f052c5'
+  config:
+    kind: BuildConfig
+    namespace: group001fiap
+    name: blog-django-py-git
+  outputDockerImageReference: >-
+    image-registry.openshift-image-registry.svc:5000/group001fiap/blog-django-py-git:latest
+  duration: 79000000000
+  startTimestamp: '2022-04-02T15:48:33Z'
+  stages:
+    - name: FetchInputs
+      startTime: '2022-04-02T15:48:36Z'
+      durationMilliseconds: 423
+      steps:
+        - name: FetchGitSource
+          startTime: '2022-04-02T15:48:36Z'
+          durationMilliseconds: 423
+    - name: PullImages
+      startTime: '2022-04-02T15:48:39Z'
+      durationMilliseconds: 22902
+      steps:
+        - name: PullBaseImage
+          startTime: '2022-04-02T15:48:39Z'
+          durationMilliseconds: 22902
+    - name: Build
+      startTime: '2022-04-02T15:49:01Z'
+      durationMilliseconds: 48688
+      steps:
+        - name: DockerBuild
+          startTime: '2022-04-02T15:49:01Z'
+          durationMilliseconds: 48688
+    - name: PushImage
+      startTime: '2022-04-02T15:49:50Z'
+      durationMilliseconds: 1340
+      steps:
+        - name: PushImage
+          startTime: '2022-04-02T15:49:50Z'
+          durationMilliseconds: 1340
+  conditions:
+    - type: New
+      status: 'False'
+      lastUpdateTime: '2022-04-02T15:48:33Z'
+      lastTransitionTime: '2022-04-02T15:48:33Z'
+    - type: Pending
+      status: 'False'
+      lastUpdateTime: '2022-04-02T15:48:36Z'
+      lastTransitionTime: '2022-04-02T15:48:36Z'
+    - type: Running
+      status: 'False'
+      lastUpdateTime: '2022-04-02T15:49:52Z'
+      lastTransitionTime: '2022-04-02T15:49:52Z'
+    - type: Complete
+      status: 'True'
+      lastUpdateTime: '2022-04-02T15:49:52Z'
+      lastTransitionTime: '2022-04-02T15:49:52Z'
+  completionTimestamp: '2022-04-02T15:49:52Z'
+  phase: Complete
